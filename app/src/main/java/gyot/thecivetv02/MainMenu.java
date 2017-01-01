@@ -75,6 +75,7 @@ import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 public class MainMenu extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, LocationListener {
     private final String baseURL = "http://192.168.61.1/data_api/";
+//
 
     LinearLayout linearLayout;
     LinearLayout linearLayout2;
@@ -107,8 +108,8 @@ public class MainMenu extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                check();
-//                lokasi();
+                check();
+                lokasi();
 //                Toast.makeText(MainMenu.this, latitude+","+longtitude, Toast.LENGTH_LONG).show();
                 // formattedDate have current date/time
 //                Toast.makeText(this, formattedDate, Toast.LENGTH_SHORT).show();
@@ -125,13 +126,13 @@ public class MainMenu extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-//        getMenu("2");
+        getMenu("2");
 //        Intent intent = new Intent(MainMenu.this, Maps.class);
 //        startActivity(intent);
     }
 
     private void getMenu(final String category) {
-        Retrofit retrofit = new Retrofit.Builder()
+        Retrofit retrofit=new Retrofit.Builder()
                 .baseUrl(baseURL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
@@ -494,8 +495,8 @@ public class MainMenu extends AppCompatActivity
             getmenu = "food";
             getMenu("2");
         } else if (id == R.id.nav_gallery) {
-            getmenu = "drink";
-            getMenu("1");
+//            getmenu = "drink";
+//            getMenu("1");
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
